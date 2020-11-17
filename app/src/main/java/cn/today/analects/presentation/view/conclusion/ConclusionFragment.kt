@@ -12,7 +12,7 @@ import cn.today.analects.presentation.view.conclusion.mvp.ConclusionInfo
 import cn.today.analects.presentation.view.conclusion.mvp.ConclusionPresenter
 import com.jess.arms.base.BaseFragment
 import com.jess.arms.di.component.AppComponent
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_conclusion.*
 
 /**
  * 论道的结语
@@ -36,10 +36,10 @@ class ConclusionFragment : BaseFragment<ConclusionPresenter>(), ConclusionContra
         val conclusion: List<ConclusionInfo> = listOf(ConclusionInfo("学天时习之", "不亦说乎"),ConclusionInfo("有朋至远方来", "不亦乐乎"))
 
         var mPagerAdapter = ConclusionPageAdapter(conclusion)
-        vViewpager.adapter = mPagerAdapter
-        vViewpager.offscreenPageLimit = 2
+        vViewpager2.adapter = mPagerAdapter
+        vViewpager2.offscreenPageLimit = 2
         //        vViewpager.addOnPageChangeListener(this)
-        vViewpager.currentItem = 1
+        vViewpager2.currentItem = 1
 
     }
 
@@ -53,11 +53,6 @@ class ConclusionFragment : BaseFragment<ConclusionPresenter>(), ConclusionContra
         savedInstanceState: Bundle?
     ): View {
         return inflater.inflate(R.layout.fragment_conclusion, container, false)
-    }
-
-
-    fun initViewPager(){
-
     }
 
     override fun showMessage(message: String) {

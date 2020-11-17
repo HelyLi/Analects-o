@@ -3,15 +3,15 @@ package cn.today.analects.presentation.view.main
 import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.Lifecycle
-import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.fragment.app.FragmentStatePagerAdapter
 
 class MainPageAdapter
-constructor(@Nullable val fragmentManager: FragmentManager, @Nullable val lifecycle : Lifecycle,@Nullable val fragments: List<Fragment>): FragmentStateAdapter(
-    fragmentManager, lifecycle) {
+constructor(@Nullable val fragmentManager: FragmentManager, private val fragments: List<Fragment>):
+    FragmentStatePagerAdapter(
+    fragmentManager) {
 
-    override fun getItemCount(): Int = fragments.count()
+    override fun getItem(position: Int): Fragment = fragments[position]
 
-    override fun createFragment(position: Int): Fragment = fragments[position]
+    override fun getCount(): Int = fragments.count()
 
 }

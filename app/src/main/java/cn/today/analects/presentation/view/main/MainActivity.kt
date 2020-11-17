@@ -28,7 +28,7 @@ class MainActivity : BaseBackExitActivity<MainPresenter>(), MainContract.View {
 
     override fun initData(savedInstanceState: Bundle?) {
         val fragments: List<Fragment> = listOf(mMainFragment, mCatalogueFragment);
-        var mPagerAdapter = MainPageAdapter(supportFragmentManager, lifecycle, fragments)
+        var mPagerAdapter = MainPageAdapter(supportFragmentManager, fragments)
         val currentIndex = intent.getIntExtra("index", 0)
         vViewpager.adapter = mPagerAdapter
         vViewpager.offscreenPageLimit = 2

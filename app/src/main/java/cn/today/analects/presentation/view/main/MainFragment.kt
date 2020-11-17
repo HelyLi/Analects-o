@@ -33,10 +33,10 @@ class MainFragment : BaseFragment<MainPresenter>(), ViewPager.OnPageChangeListen
 
     override fun initData(savedInstanceState: Bundle?) {
         val fragments: List<Fragment> = listOf(mWisdomFragment, mConclusionFragment);
-        var mPagerAdapter = MainPageAdapter(childFragmentManager,lifecycle, fragments)
+        var mPagerAdapter = MainPageAdapter(childFragmentManager, fragments)
         vViewpager.adapter = mPagerAdapter
         vViewpager.offscreenPageLimit = 2
-//        vViewpager.addOnPageChangeListener(this)
+        vViewpager.addOnPageChangeListener(this)
         vViewpager.currentItem = 1
     }
 
